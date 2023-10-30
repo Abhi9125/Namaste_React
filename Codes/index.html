@@ -21,6 +21,7 @@
 
     <!-- 3. Hello World by using ReactJS -->
     <!-- first import the cdn link -->
+    <div class="root"></div>
     <script
       crossorigin
       src="https://unpkg.com/react@18/umd/react.development.js"
@@ -29,5 +30,20 @@
       crossorigin
       src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
     ></script>
+
+    <script>
+      // createElement take three argument first is `tag`, `Attribute`, `input that we want to publish`
+      const heading = React.createElement(
+        "h1",
+        {},
+        "Hello World! Now I'm start learning react."
+      );
+
+      // ReactDom.createRoot is create a root where all the manipulatio happen.
+      const root = ReactDOM.createRoot(document.querySelector(".root"));
+
+      // render method use for render the Dom, and update where the update happen
+      root.render(heading);
+    </script>
   </body>
 </html>

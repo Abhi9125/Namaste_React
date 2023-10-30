@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="root"></div>
+    <!--render()only render root other `HTML` will same  -->
+    <h1>This code will not change after rendering</h1>
+    <div class="root">
+      <h1>This will replace after render</h1>
+    </div>
+    <h1>This will also not change</h1>
     <script
       crossorigin
       src="https://unpkg.com/react@18/umd/react.development.js"
@@ -16,7 +21,6 @@
       crossorigin
       src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
     ></script>
-
-    <script src="./app.js"></script>
+    <script src="./app.js" defer></script>
   </body>
 </html>

@@ -35,4 +35,5 @@ console.log(nested); // object that have `h1` element and some props
 const root = ReactDOM.createRoot(document.querySelector(".root"));
 
 //-- render method use for render the Dom, and update where the update happen
+// --render()only render root other `HTML` will same
 root.render(nested);

@@ -3,24 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>React Learning</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- 1. Simple Hello World using html -->
-    <!-- <h1>Hello World</h1> -->
-
-    <!-- 2. Hello world by using JS -->
-    <!-- <div class="root"></div>
-    <script>
-      const h1 = document.createElement("h1");
-      h1.setAttribute("class", "heading");
-      const root = document.querySelector(".root");
-      h1.innerText = "Hello World";
-      root.append(h1);
-    </script> -->
-
-    <!-- 3. Hello World by using ReactJS -->
-    <!-- first import the cdn link -->
     <div class="root"></div>
     <script
       crossorigin
@@ -31,19 +17,6 @@
       src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
     ></script>
 
-    <script>
-      // createElement take three argument first is `tag`, `Attribute`, `input that we want to publish`
-      const heading = React.createElement(
-        "h1",
-        {},
-        "Hello World! Now I'm start learning react."
-      );
-
-      // ReactDom.createRoot is create a root where all the manipulatio happen.
-      const root = ReactDOM.createRoot(document.querySelector(".root"));
-
-      // render method use for render the Dom, and update where the update happen
-      root.render(heading);
-    </script>
+    <script src="./app.js"></script>
   </body>
 </html>

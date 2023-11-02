@@ -1,0 +1,22 @@
+{
+  "name": "learning-react",
+  "version": "1.0.0",
+  "description": "This is react learning by akshay saini",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/Abhi9125/React_Learning)"
+  },
+  "keywords": [],
+  "author": "react by Abhi",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.10.2"
+  }
+}

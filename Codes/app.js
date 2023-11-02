@@ -14,6 +14,9 @@ Creating the nested element using react
 </div>
 
 */
+// import react and react-dom from react and react-dom module
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 //-- createElement take three argument first is `tag`, `Attribute`, `input that we want to publish`
 // if we have nested element and also sibling in it so we use `[]` in third argument

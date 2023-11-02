@@ -2,7 +2,6 @@
   "name": "learning-react",
   "version": "1.0.0",
   "description": "This is react learning by akshay saini",
-  "main": "app.js",
   "scripts": {
     "test": "jest"
   },
@@ -14,9 +13,15 @@
   "author": "react by Abhi",
   "license": "ISC",
   "dependencies": {
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "parcel": "^2.10.2"
-  }
+    "parcel": "^2.10.2",
+    "process": "^0.11.10"
+  },
+  "browserslist": [
+    "defaults and fully supports es6-module",
+    "maintained node versions"
+  ]
 }

@@ -1,6 +1,6 @@
 import { IMG_URL } from "../utility/constant";
 // Hearder Component --  that hold the logo and nav bars
-const HeaderCom = () => {
+export const HeaderCom = () => {
   return (
     <header className="header">
       <div className="img-container">
@@ -19,4 +19,4 @@ const HeaderCom = () => {
   );
 };
 
-export default HeaderCom;
+// export default HeaderCom;

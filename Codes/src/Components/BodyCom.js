@@ -1,6 +1,7 @@
 import RescartCom from "./RescartCom";
 // Importing useState/useEffect from react by named_import.
 import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
 
 // Body Component that hold search and reasturent cart.
 const BodyCom = () => {
@@ -25,21 +26,26 @@ const BodyCom = () => {
     const Jsondata = await res.json();
     console.log(Jsondata);
     console.log(
-      Jsondata?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+      Jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
 
     //state change - rerender our app, bcz state is change.
     setListOFResturant(
-      Jsondata?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+      Jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
   };
 
-  // Below is a dummy console, first this console run then after useEffect callback function will execute.
-  // console.log(
-  //   "First render this console and after rendering this component then useEffect run"
-  // );
+  // Loading component until our API is not come.
+  // if (ListOFResturant.length === 0) {
+  //   return <h1>Loading....</h1>;
+  // }
+
+  // Instead of using above Loading ve use Simmer, Dummy Shimmer-card
+  if (ListOFResturant.length === 0) {
+    return <Shimmer />;
+  }
 
   return (
     <div className="main-body-container">

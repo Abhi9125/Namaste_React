@@ -45,11 +45,14 @@
 - 00:45:00 – Live Data API
 - 00:47:00 – Delete MockData.js file
 - 00:48:00 – Optional Chaining with an example
-<!-- - 00:50:40 – Spinning Loader
+
+### Part - 4
+
+- 00:50:40 – Spinning Loader(By using if condition)
 - 00:52:40 – Shimmer UI
 - 00:56:00 – Shimmer Component Code
 - 00:58:30 – CSS Code for the Shimmer Component
-- 01:04:00 – Conditional Rendering
+<!-- - 01:04:00 – Conditional Rendering
 - 01:06:00 – using Ternary Operator
 - 01:07:10 – Why do we need state variables? (useState)
 - 01:16:10 – useState() usage & explanation

@@ -1,63 +1,46 @@
 import RescartCom from "./RescartCom";
-// Importing useState from react by named_import.
-import { useState } from "react";
-// import resList from "../utility/mockData";
-import resList from "../utility/mockData";
+// Importing useState/useEffect from react by named_import.
+import { useEffect, useState } from "react";
 
 // Body Component that hold search and reasturent cart.
 const BodyCom = () => {
-  // Local variable means this superpowerfull react variable work only this component.
-  // Inisialy useState return a default value that assign in the variable.
-  const [ListOFResturant, setListOFResturant] = useState(resList);
-  const [SerchText, setSearchText] = useState("");
-  // Normal JS Varibale declaration
-  // let resList = [
-  //   {
-  //     info: {
-  //       id: "340854",
-  //       name: "Pizza Hut",
-  //       cloudinaryImageId: "2b4f62d606d1b2bfba9ba9e5386fabb7",
-  //       locality: "City Heart",
-  //       areaName: "Janta Nagar",
-  //       costForTwo: "₹350 for two",
-  //       cuisines: ["Pizzas"],
-  //       avgRating: 3.9,
-  //       sla: {
-  //         deliveryTime: 24,
-  //       },
-  //     },
-  //   },
-  //   {
-  //     info: {
-  //       id: "340855",
-  //       name: "KFC",
-  //       cloudinaryImageId: "2b4f62d606d1b2bfba9ba9e5386fabb7",
-  //       locality: "City Heart",
-  //       areaName: "Janta Nagar",
-  //       costForTwo: "₹350 for two",
-  //       cuisines: ["Pizzas"],
-  //       avgRating: 4.4,
-  //       sla: {
-  //         deliveryTime: 24,
-  //       },
-  //     },
-  //   },
-  //   {
-  //     info: {
-  //       id: "340856",
-  //       name: "Dominoz",
-  //       cloudinaryImageId: "2b4f62d606d1b2bfba9ba9e5386fabb7",
-  //       locality: "City Heart",
-  //       areaName: "Janta Nagar",
-  //       costForTwo: "₹350 for two",
-  //       cuisines: ["Pizzas"],
-  //       avgRating: 4.2,
-  //       sla: {
-  //         deliveryTime: 24,
-  //       },
-  //     },
-  //   },
-  // ];
+  // useState() calling.
+  // we do not need of dummy data.
+  const [ListOFResturant, setListOFResturant] = useState([]);
+  // const [SerchText, setSearchText] = useState("");
+
+  // useEffect() calling -- it is a hook in react, it run after the render of component.
+  // Syntex--> useEffect take two argument one is callback function and second is dpendency Array.
+  // We use useEffect here bcz we want api calling after first render.
+  useEffect(() => {
+    // fetchData() calling.
+    fetchData();
+  }, []);
+
+  // fetch api
+  const fetchData = async () => {
+    const res = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.7498676&lng=76.64110939999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+    const Jsondata = await res.json();
+    console.log(Jsondata);
+    console.log(
+      Jsondata?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants
+    );
+
+    //state change - rerender our app, bcz state is change.
+    setListOFResturant(
+      Jsondata?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants
+    );
+  };
+
+  // Below is a dummy console, first this console run then after useEffect callback function will execute.
+  // console.log(
+  //   "First render this console and after rendering this component then useEffect run"
+  // );
+
   return (
     <div className="main-body-container">
       <div className="btn-container">
@@ -65,15 +48,10 @@ const BodyCom = () => {
           className="search-box"
           type="text"
           placeholder="Search Resturent"
-          onChange={(e) => console.log(e.target.value)}
+          // onChange={(e) => console.log(e.target.value)}
         />
-        {/* Add button and onClick event on button */}
-        {/* In react event same as JS it take a callback function. */}
         <button
           className="filter-btn"
-          // Add onClick Handler
-          // onClick={() => console.log("Filter button click")}
-
           // Add onClick for filter --> filter out over 4 rating resturent but UI will not change.
           onClick={() => {
             const filteredList = ListOFResturant.filter(
@@ -89,14 +67,6 @@ const BodyCom = () => {
       </div>
       <div className="res-container">
         {
-          //  This is not a good way. What i do if resturent is 100.
-          /* <RescartCom resData={resList[0]} />
-          <RescartCom resData={resList[1]} />
-          <RescartCom resData={resList[2]} />
-          <RescartCom resData={resList[3]} />
-          <RescartCom resData={resList[4]} />
-          */
-
           // above this we do by for loop but instead of using for loop or any other loop we use Map().
           // update resList with ListOFResturent bcz now ListOFResturent is the array.
           ListOFResturant.map((resturent) => (

@@ -8,10 +8,11 @@ const BodyCom = () => {
   // useState() calling.
   // we do not need of dummy data.
   const [ListOFResturant, setListOFResturant] = useState([]);
-  // const [SerchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState("");
 
-  // useEffect() calling -- it is a hook in react, it run after the render of component.
-  // Syntex--> useEffect take two argument one is callback function and second is dpendency Array.
+  // Whenever state variable is change react reconciliation(re-render it).
+  console.log("Rendered Every Change");
+
   // We use useEffect here bcz we want api calling after first render.
   useEffect(() => {
     // fetchData() calling.
@@ -26,23 +27,15 @@ const BodyCom = () => {
     const Jsondata = await res.json();
     console.log(Jsondata);
     console.log(
-      Jsondata?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+      Jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
-
-    //state change - rerender our app, bcz state is change.
+    //Update the Resturants that come from API.
     setListOFResturant(
-      Jsondata?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+      Jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
   };
-
-  // Loading component until our API is not come.
-  // if (ListOFResturant.length === 0) {
-  //   return <h1>Loading....</h1>;
-  // }
-
-  // Instead of using above Loading ve use Simmer, Dummy Shimmer-card
   // Instead of using if condition we can use ternary oprator.
   return ListOFResturant.length === 0 ? (
     <Shimmer />
@@ -50,11 +43,28 @@ const BodyCom = () => {
     <div className="main-body-container">
       <div className="btn-container">
         <input
-          className="search-box"
           type="text"
+          className="search-box"
           placeholder="Search Resturent"
-          // onChange={(e) => console.log(e.target.value)}
+          value={searchText}
+          // call setSearchText() on each change and it rerender component every change.
+          onChange={(e) => setSearchText(e.target.value)}
         />
+        {/* Serach a perticular resturent by its name */}
+        <button
+          className="search-btn"
+          onClick={() => {
+            const searchRes = ListOFResturant.filter(
+              // (res) => res?.info?.name === searchText  //This caseSensitive
+              (res) =>
+                res?.info?.name.toLowerCase().includes(searchText.toLowerCase()) //this is not caseSensitive.
+            );
+            setListOFResturant(searchRes);
+            // setListOFResturant("");
+          }}
+        >
+          Search
+        </button>
         <button
           className="filter-btn"
           // Add onClick for filter --> filter out over 4 rating resturent but UI will not change.

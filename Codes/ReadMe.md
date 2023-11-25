@@ -62,9 +62,13 @@
 - 01:23:00 – Super Power of React
 - 01:29:00 – Reconciliation & Diff Algorithm Explained
 - 01:31:00 – Toggle the login & logout button
-<!-- - 01:39:00 – Build a Search Functionality
+
+### Part -6
+
+- 01:39:00 – Build a Search Functionality
 - 01:46:00 – OnChange handler
 - 01:55:00 – Nice explanation of re-rendering
 - 01:57:00 – DOM Manipulation & Virtual DOM
-- 02:02:00 – Search functionality enhanced using toLowerCase() method
-- 02:12:00 – Homework (Assignment) -->
+- 02:02:00 – Search functionality enhanced using toLowerCase() and includes() method
+
+<!-- - 02:12:00 – Homework (Assignment) --> -->

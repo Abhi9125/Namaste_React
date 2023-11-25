@@ -52,14 +52,17 @@
 - 00:52:40 – Shimmer UI
 - 00:56:00 – Shimmer Component Code
 - 00:58:30 – CSS Code for the Shimmer Component
-<!-- - 01:04:00 – Conditional Rendering
+
+### Part - 5
+
+- 01:04:00 – Conditional Rendering
 - 01:06:00 – using Ternary Operator
 - 01:07:10 – Why do we need state variables? (useState)
 - 01:16:10 – useState() usage & explanation
 - 01:23:00 – Super Power of React
 - 01:29:00 – Reconciliation & Diff Algorithm Explained
 - 01:31:00 – Toggle the login & logout button
-- 01:39:00 – Build a Search Functionality
+<!-- - 01:39:00 – Build a Search Functionality
 - 01:46:00 – OnChange handler
 - 01:55:00 – Nice explanation of re-rendering
 - 01:57:00 – DOM Manipulation & Virtual DOM

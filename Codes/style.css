@@ -28,8 +28,8 @@
 }
 
 .nav-container > ul > li {
-    margin-right: 10px; /* Adjust the value according to your spacing preference */
-    margin : 15px
+    margin-right: 20px; /* Adjust the value according to your spacing preference */
+    margin : 0px  20px
 }
 
 .btn-container{
@@ -87,4 +87,9 @@
     padding: 8px;
     margin: 10px;
     background-color: #e3e3e3;
+}
+
+.login-btn{
+    padding: 0px 15px;
+    cursor: pointer;
 }

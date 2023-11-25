@@ -26,13 +26,13 @@ const BodyCom = () => {
     const Jsondata = await res.json();
     console.log(Jsondata);
     console.log(
-      Jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+      Jsondata?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
 
     //state change - rerender our app, bcz state is change.
     setListOFResturant(
-      Jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+      Jsondata?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
   };
@@ -43,11 +43,10 @@ const BodyCom = () => {
   // }
 
   // Instead of using above Loading ve use Simmer, Dummy Shimmer-card
-  if (ListOFResturant.length === 0) {
-    return <Shimmer />;
-  }
-
-  return (
+  // Instead of using if condition we can use ternary oprator.
+  return ListOFResturant.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="main-body-container">
       <div className="btn-container">
         <input

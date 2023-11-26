@@ -71,4 +71,8 @@
 - 01:57:00 – DOM Manipulation & Virtual DOM
 - 02:02:00 – Search functionality enhanced using toLowerCase() and includes() method
 
-<!-- - 02:12:00 – Homework (Assignment) --> -->
+### Part - 7
+
+- 02:12:00 – Homework (Assignment), how to handle search if we search once so again how we search in all res
+  cart.Ex- If 1st time i search kfc, on ui only kfc resturent card show, what if a agian search Domino's it throw
+  error so we handle this problem by using a new searchRes state variable.

@@ -9,6 +9,8 @@ const BodyCom = () => {
   // we do not need of dummy data.
   const [ListOFResturant, setListOFResturant] = useState([]);
   const [searchText, setSearchText] = useState("");
+  // Without add this seachres hm after one search kewal output wale cards me hi search kr skte the.
+  const [searchRes, setSearchRes] = useState([]);
 
   // Whenever state variable is change react reconciliation(re-render it).
   console.log("Rendered Every Change");
@@ -27,12 +29,17 @@ const BodyCom = () => {
     const Jsondata = await res.json();
     console.log(Jsondata);
     console.log(
-      Jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+      Jsondata?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
     //Update the Resturants that come from API.
     setListOFResturant(
-      Jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+      Jsondata?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants
+    );
+    // setResturent card that come from API.
+    setSearchRes(
+      Jsondata?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
   };
@@ -42,6 +49,7 @@ const BodyCom = () => {
   ) : (
     <div className="main-body-container">
       <div className="btn-container">
+        {/* Search box creating */}
         <input
           type="text"
           className="search-box"
@@ -54,13 +62,14 @@ const BodyCom = () => {
         <button
           className="search-btn"
           onClick={() => {
+            // search resturent from all resturent.
             const searchRes = ListOFResturant.filter(
               // (res) => res?.info?.name === searchText  //This caseSensitive
               (res) =>
                 res?.info?.name.toLowerCase().includes(searchText.toLowerCase()) //this is not caseSensitive.
             );
-            setListOFResturant(searchRes);
-            // setListOFResturant("");
+            // update searchRes resturent after click.
+            setSearchRes(searchRes);
           }}
         >
           Search
@@ -82,9 +91,8 @@ const BodyCom = () => {
       </div>
       <div className="res-container">
         {
-          // above this we do by for loop but instead of using for loop or any other loop we use Map().
-          // update resList with ListOFResturent bcz now ListOFResturent is the array.
-          ListOFResturant.map((resturent) => (
+          // update ListOFResturent with searchRes bcz hame kewal search text wale resturent hi chahiye.
+          searchRes.map((resturent) => (
             <RescartCom key={resturent.info.id} resData={resturent} />
           ))
         }

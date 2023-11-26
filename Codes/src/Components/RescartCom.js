@@ -16,8 +16,8 @@ const RescartCom = (props) => {
           src={CDN_URL + resData.info.cloudinaryImageId}
         />
         <h3 className="name">{name} </h3>
-        <h4>{costForTwo.slice(0, 5)}</h4>
-        <h4>{resData.info.sla.deliveryTime} minutes</h4>
+        <h4>{costForTwo}</h4>
+        <h4>{resData.info.sla.deliveryTime} min</h4>
         <h5>{avgRating} stars</h5>
         <h5 className="cuisines">
           {cuisines.join(",").split(",", 3).join(",")}

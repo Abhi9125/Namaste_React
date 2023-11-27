@@ -36,8 +36,8 @@ export const HeaderCom = () => {
       <div className="nav-container">
         <ul>
           <li>Home</li>
-          <li>About Us</li>
-          <li>Offers</li>
+          <li>About</li>
+          <li>Contact Us</li>
           <li>Cart</li>
           <button
             className="login-btn"

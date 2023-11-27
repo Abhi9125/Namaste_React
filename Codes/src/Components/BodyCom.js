@@ -82,8 +82,9 @@ const BodyCom = () => {
               (res) => res.info.avgRating > 4.0
             );
             console.log(filteredList);
-            // When this function call react Rerender it.
-            setListOFResturant(filteredList);
+            // Fix the problem.
+            // update serchres bcz res card render that compont below.
+            setSearchRes(filteredList);
           }}
         >
           Top Rated Resturant

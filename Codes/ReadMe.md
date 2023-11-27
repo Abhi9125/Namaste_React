@@ -88,7 +88,33 @@
 ### Part - 2
 
 - 00:10:05 - Some impotant point about useState and hooks.
-<!--
+
+```JS
+// Some rule for useState
+  // 1. hook Never use outside the component.
+  // 2. Try to put useState top of component.
+  // 3. Never put useState inside loop, condition, function.
+  const [btnNameReact, setBtnNameReact] = useState("Login");
+
+  // Some properties of useEffect
+  // Case 1 -- Without dependecy Array useEffect call every render of component.
+  // useEffect(() => {
+  //   console.log("useEffect call each time when component render");
+  // });
+
+  // Case 2 -- With dependency Array -- useEffect call only once(first render)
+  // useEffect(() => {
+  //   console.log("useEffect call only fist render");
+  // }, []);
+
+  // Case 3 -- With dependency Array that have a dependency -- in this case useEffect call each time when that dependency change.
+  useEffect(() => {
+    console.log("useEffect call when dependency btnNameReact Change");
+  }, [btnNameReact]);
+```
+
+### Part - 3
+
 - 00:15:40 – React Router
 - 00:19:00 – Create Routing Configuration
 - 00:22:00 – Create About Component
@@ -96,7 +122,8 @@
 - 00:33:00 – error (404 not found)
 - 00:37:00 – useRouteError Hook
 - 00:41:55 – Error.js
-- 00:44:20 – Children Routes
+
+<!-- - 00:44:20 – Children Routes
 - 00:51:00 – Outlet Keyword
 - 00:56:00 – Create links to Header Menu
 - 00:58:18 – Link Component
@@ -114,4 +141,4 @@
 - 02:02:30 – Move API to constants.js
 - 02:04:00 - Dynamic Cards- to be clickable
 - 02:08:00 – Link Component
-- 02:13:00 – Session Recap -->
+- 02:13:00 – Session Recap  -->

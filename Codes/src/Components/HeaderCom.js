@@ -1,30 +1,11 @@
 import { IMG_URL } from "../utility/constant";
-import { useEffect, useState } from "react";
-// Hearder Component --  that hold the logo and nav bars
+import { useState } from "react";
+//Link component for link
+import { Link } from "react-router-dom";
 
-export const HeaderCom = () => {
+const HeaderCom = () => {
   // This is the special variable that is Statevariable.
-  // Some rule for useState
-  // 1. hook Never use outside the component.
-  // 2. Try to put useState top of component.
-  // 3. Never put useState inside loop, condition, function.
   const [btnNameReact, setBtnNameReact] = useState("Login");
-
-  // Some properties of useEffect
-  // Case 1 -- Without dependecy Array useEffect call every render of component.
-  // useEffect(() => {
-  //   console.log("useEffect call each time when component render");
-  // });
-
-  // Case 2 -- With dependency Array -- useEffect call only once(first render)
-  // useEffect(() => {
-  //   console.log("useEffect call only fist render");
-  // }, []);
-
-  // Case 3 -- With dependency Array that have a dependency -- in this case useEffect call each time when that dependency change.
-  useEffect(() => {
-    console.log("useEffect call when dependency btnNameReact Change");
-  }, [btnNameReact]);
 
   console.log("heading render");
   return (
@@ -35,10 +16,22 @@ export const HeaderCom = () => {
 
       <div className="nav-container">
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            {/* we do not use anchor tag bcz if we use anchor tag if referce hole app 
+            Instead of using anchor we use Link component.
+            */}
+            {/* <a href="/about">About</a> */}
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact Us</Link>
+          </li>
+          <li>
+            <Link to="/card">Card</Link>
+          </li>
           <button
             className="login-btn"
             onClick={() => {
@@ -56,4 +49,4 @@ export const HeaderCom = () => {
   );
 };
 
-// export default HeaderCom;
+export default HeaderCom;

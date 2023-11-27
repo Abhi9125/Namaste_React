@@ -123,7 +123,9 @@
 - 00:37:00 – useRouteError Hook
 - 00:41:55 – Error.js
 
-<!-- - 00:44:20 – Children Routes
+### Part - 4
+
+- 00:44:20 – Children Routes
 - 00:51:00 – Outlet Keyword
 - 00:56:00 – Create links to Header Menu
 - 00:58:18 – Link Component
@@ -131,7 +133,8 @@
 - 01:03:55 – Single Page Applications (SPA)
 - 01:05:35 – 2 types of Routing: Client Side Routing & Server-side Routing
 - 01:08:00 – Session Recap till now
-- 01:11:50 – Dynamic Routing
+
+ <!-- - 01:11:50 – Dynamic Routing
 - 01:13:35 – JSON Viewer
 - 01:40:30 – GraphQL Introduction
 - 01:52:40 – Dynamic Data coding

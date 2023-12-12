@@ -134,7 +134,9 @@
 - 01:05:35 – 2 types of Routing: Client Side Routing & Server-side Routing
 - 01:08:00 – Session Recap till now
 
- <!-- - 01:11:50 – Dynamic Routing
+### Part - 5
+
+- 01:11:50 – Dynamic Routing
 - 01:13:35 – JSON Viewer
 - 01:40:30 – GraphQL Introduction
 - 01:52:40 – Dynamic Data coding
@@ -144,4 +146,4 @@
 - 02:02:30 – Move API to constants.js
 - 02:04:00 - Dynamic Cards- to be clickable
 - 02:08:00 – Link Component
-- 02:13:00 – Session Recap  -->
+- 02:13:00 – Session Recap

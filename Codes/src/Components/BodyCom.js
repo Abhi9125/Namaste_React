@@ -2,6 +2,7 @@ import RescartCom from "./RescartCom";
 // Importing useState/useEffect from react by named_import.
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 // Body Component that hold search and reasturent cart.
 const BodyCom = () => {
@@ -29,17 +30,17 @@ const BodyCom = () => {
     const Jsondata = await res.json();
     console.log(Jsondata);
     console.log(
-      Jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+      Jsondata?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
     //Update the Resturants that come from API.
     setListOFResturant(
-      Jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+      Jsondata?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
     // setResturent card that come from API.
     setSearchRes(
-      Jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+      Jsondata?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
   };
@@ -94,7 +95,13 @@ const BodyCom = () => {
         {
           // update ListOFResturent with searchRes bcz hame kewal search text wale resturent hi chahiye.
           searchRes.map((resturent) => (
-            <RescartCom key={resturent.info.id} resData={resturent} />
+            <Link
+              key={resturent.info.id}
+              to={"/restaurants/" + resturent.info.id}
+              style={{ color: "black", textDecoration: "none" }}
+            >
+              <RescartCom resData={resturent} />
+            </Link>
           ))
         }
       </div>

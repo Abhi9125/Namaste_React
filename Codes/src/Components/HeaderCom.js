@@ -7,7 +7,6 @@ const HeaderCom = () => {
   // This is the special variable that is Statevariable.
   const [btnNameReact, setBtnNameReact] = useState("Login");
 
-  console.log("heading render");
   return (
     <header className="header">
       <div className="img-container">

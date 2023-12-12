@@ -5,6 +5,7 @@ import BodyCom from "./Components/BodyCom";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Error from "./Components/Error";
+import RestaurantsMenu from "./Components/RestaurantsMenu";
 import HeaderCom from "./Components/HeaderCom";
 // importing router configration, RouterProvider for rendering.
 // Use import Outlet component for children routing.
@@ -39,6 +40,11 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        // we give `:`(Collon) for dynamic routing.
+        path: "/restaurants/:resId",
+        element: <RestaurantsMenu />,
       },
     ],
     // handle error if path not match ex - localhost:1479/difhdsukfh

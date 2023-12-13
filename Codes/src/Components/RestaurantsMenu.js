@@ -22,44 +22,40 @@ const RestaurantsMenu = () => {
     setResItems(JsonData);
   };
 
+  if (resItems === "") return <Shimmer />;
+
+  // Destructuring
+  const { name, cuisines, areaName } =
+    resItems?.data?.cards[0]?.card?.card?.info;
+
+  const { lastMileTravel } = resItems?.data?.cards[0]?.card?.card?.info?.sla;
+
+  const { title, itemCards } =
+    resItems.data.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+      ?.card;
+
   //   recommended restaurant
   //   const recRes = resItems.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards;
   //   console.log(recRes);
-  return resItems === "" ? (
-    <Shimmer />
-  ) : (
+  return (
     <div className="menu-container">
       <div className="resName-container">
-        <h1>{resItems.data.cards[0].card.card.info.name}</h1>
-        <p>{resItems.data.cards[0].card.card.info.cuisines.join(",")}</p>
-        <p>
-          {resItems.data.cards[0].card.card.info.areaName +
-            "," +
-            resItems.data.cards[0].card.card.info.sla.lastMileTravel +
-            " k.m"}
-        </p>
+        <h1>{name}</h1>
+        <p>{cuisines.join(",")}</p>
+        <p>{areaName + "," + lastMileTravel + " k.m"}</p>
       </div>
       <div className="recommededMenu-container">
-        <h1>
-          {
-            resItems.data.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]
-              ?.card?.card?.title
-          }
-        </h1>
+        <h1>{title}</h1>
         <ul>
-          {resItems.data.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards?.map(
-            (item) => (
-              <li key={item.card.info.id}>
-                <h3>
-                  {item.card.info.name + ":" + item.card.info.price / 100}
-                </h3>
-              </li>
-            )
-          )}
-          {console.log(
+          {itemCards?.map((item) => (
+            <li key={item.card.info.id}>
+              <h3>{item.card.info.name + ":" + item.card.info.price / 100}</h3>
+            </li>
+          ))}
+          {/* {console.log(
             resItems.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[2]
               .card.card.itemCards
-          )}
+          )} */}
         </ul>
       </div>
     </div>

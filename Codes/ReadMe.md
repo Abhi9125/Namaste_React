@@ -161,10 +161,14 @@
 - 00:23:00 – What if you want more props?
   `Part 1 Completed`
 
+### Part - 2
+
 00:26:00 – How can we write local/state variables in a Function Component
 00:28:00 – how can we create state/local variable in Class component
 00:30:00 – “this.state” explained, Destructuring
 00:34:00 – How do we create 2 state/local variables in both functional & class-based component
+`Part - 2 Completed`
+
 00:37:05 – How to update the state variables in Class component
 00:47:55 – Interview Question
 00:48:20 – Life cycle of Class based components

@@ -96,3 +96,7 @@
     padding: 0px 15px;
     cursor: pointer;
 }
+.detail-card{
+    padding: 15px 15px;
+    border: solid black 2px;
+}

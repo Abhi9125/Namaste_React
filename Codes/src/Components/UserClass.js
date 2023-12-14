@@ -5,7 +5,8 @@ class UserClass extends React.Component {
   constructor(props) {
     super(props);
 
-    console.log(props);
+    console.log("Child Class Constructer");
+    // console.log(props); //give object
 
     // In Class Component, declaring the local variable with this.state object. Here state is a reserve word.
     // In classComponet we do not create seprate variable for each local state like function component
@@ -14,8 +15,15 @@ class UserClass extends React.Component {
       count2: 2,
     };
   }
+
+  componentDidMount() {
+    console.log("Child Class didMount");
+  }
+
   render() {
     const { name, Location } = this.props;
+
+    console.log("Child Class Render");
     return (
       <div className="detail-card">
         {/*Updating the UI of page by using USeState in classComponent*/}
@@ -23,15 +31,8 @@ class UserClass extends React.Component {
         <h2>Count : {this.state.count2}</h2>
         <button
           onClick={() => {
-            /*Do not update state variable directly like this.
-            this.state.count = this.state.count+1*/
-
-            // For Updaing State react give us a function that is setState() that take object after running setState component rerender again.
-
             this.setState({
               count: this.state.count + 1,
-              //   if we want to update both do not create again setState() do it inside it.
-              count2: this.state.count2 + 1,
             });
           }}
         >

@@ -174,6 +174,8 @@
 00:37:05 – How to update the state variables in Class component
 `Part - 3 Completed`
 
+### Part - 4
+
 00:47:55 – Interview Question
 00:48:20 – Life cycle of Class based components
 00:50:00 – Detailed Explanation
@@ -182,6 +184,7 @@
 00:58:25 – ComponentDidMount(){ }, Life cycle of a Parent-child relationship
 01:05:00 –ComponentDidMount() used for API calss
 01:07:00 – API calls inside useEffect()
+`Part - 4 Completed`
 01:14:00 – this.props.name + “child constructor”
 01:20:00 – React Lifecycle Methods Diagram
 01:21:00 – Why React is so fast?

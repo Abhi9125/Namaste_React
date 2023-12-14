@@ -18,10 +18,25 @@ class UserClass extends React.Component {
     const { name, Location } = this.props;
     return (
       <div className="detail-card">
-        {/* If we directly access count it will throw error
-        <h1>Count : {count}</h1> */}
+        {/*Updating the UI of page by using USeState in classComponent*/}
         <h1>Count : {this.state.count}</h1>
-        <h2>Count2 : {this.state.count2}</h2>
+        <h2>Count : {this.state.count2}</h2>
+        <button
+          onClick={() => {
+            /*Do not update state variable directly like this.
+            this.state.count = this.state.count+1*/
+
+            // For Updaing State react give us a function that is setState() that take object after running setState component rerender again.
+
+            this.setState({
+              count: this.state.count + 1,
+              //   if we want to update both do not create again setState() do it inside it.
+              count2: this.state.count2 + 1,
+            });
+          }}
+        >
+          Increase Count
+        </button>
         <h3>{name}</h3>
         <h3>{Location}</h3>
         <h3>Contact : abhi.singh3231@gmail.com</h3>

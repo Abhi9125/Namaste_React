@@ -169,7 +169,11 @@
 00:34:00 – How do we create 2 state/local variables in both functional & class-based component
 `Part - 2 Completed`
 
+### Part - 3
+
 00:37:05 – How to update the state variables in Class component
+`Part - 3 Completed`
+
 00:47:55 – Interview Question
 00:48:20 – Life cycle of Class based components
 00:50:00 – Detailed Explanation

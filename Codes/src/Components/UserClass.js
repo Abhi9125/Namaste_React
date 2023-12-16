@@ -5,7 +5,7 @@ class UserClass extends React.Component {
   constructor(props) {
     super(props);
 
-    console.log("Child Class Constructer");
+    console.log(this.props.name + "Child Class Constructer");
     // console.log(props); //give object
 
     // In Class Component, declaring the local variable with this.state object. Here state is a reserve word.
@@ -17,13 +17,13 @@ class UserClass extends React.Component {
   }
 
   componentDidMount() {
-    console.log("Child Class didMount");
+    console.log(this.props.name + "Child Class didMount");
   }
 
   render() {
     const { name, Location } = this.props;
 
-    console.log("Child Class Render");
+    console.log(this.props.name + "Child Class Render");
     return (
       <div className="detail-card">
         {/*Updating the UI of page by using USeState in classComponent*/}

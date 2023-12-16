@@ -23,45 +23,43 @@ class About extends Component {
     return (
       <div>
         <h1>This is about page</h1>
-        {/* No call Component with props */}
-        <User
-          name={"Abhishek Singh (Functional Component)"}
-          Location={"Mohali"}
-        />
         {/* Calling child class component with props */}
-        <UserClass
-          name={"Abhishek Singh (Class_Component)"}
-          Location={"Mohali"}
-        />
+        {/* Calling multple chaild class, calling classComponent means makign the instance of the class */}
+        <UserClass name={"Fisrt"} Location={"Mohali"} />
+        <UserClass name={"Second"} Location={"Varanasi"} />
+        <UserClass name={"Third"} Location={"Lucknow"} />
       </div>
     );
   }
 }
-/*
-Output--
-About.js:13 Parent Constructure
-About.js:22 Parent Render
-UserClass.js:8 Child Class Constructer
-UserClass.js:25 Child Class Render
-UserClass.js:20 Child Class didMount
-About.js:18 Parent Did Mount
-*/
+/****
+ *Expected Output--
+ * Parent Constructor
+ * Parent Render
+ * First Child class Constroctor
+ * First child render
+ * First Child class didMount
+ * Second Child class Constroctor
+ * Second child render
+ * Second Child class didMount
+ * Parent didMount.
+ */
 
-// const About = () => {
-//   return (
-//     <div>
-//       <h1>This is about page</h1>
-//       {/* No call Component with props */}
-//       <User
-//         name={"Abhishek Singh (Functional Component)"}
-//         Location={"Mohali"}
-//       />
-//       {/* Calling class component with props */}
-//       <UserClass
-//         name={"Abhishek Singh (Class_Component)"}
-//         Location={"Mohali"}
-//       />
-//     </div>
-//   );
-// };
+/*****
+  * But Actual Output is below, 
+ * Parent Constructor
+ * Parent Render
+ * First Child class Constroctor 
+ * First child render 
+ * Second Child class Constroctor 
+ * Second child render
+ * Third Child class Constroctor 
+ * Third child render
+ * First Child class didMount 
+ * Second Child class didMount
+ * Third Child class didMount 
+ * Parent didMount.
+ * OutPut come this order bcz of Life Cycle of class Componetn - it hadden in two phase (1) -- Render() phase, (2) -- Commit Phase. 
+ 
+ */
 export default About;

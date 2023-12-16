@@ -163,33 +163,41 @@
 
 ### Part - 2
 
-00:26:00 – How can we write local/state variables in a Function Component
-00:28:00 – how can we create state/local variable in Class component
-00:30:00 – “this.state” explained, Destructuring
-00:34:00 – How do we create 2 state/local variables in both functional & class-based component
-`Part - 2 Completed`
+- 00:26:00 – How can we write local/state variables in a Function Component
+- 00:28:00 – how can we create state/local variable in Class component
+- 00:30:00 – “this.state” explained, Destructuring
+- 00:34:00 – How do we create 2 state/local variables in both functional & class-based component
+  `Part - 2 Completed`
 
 ### Part - 3
 
-00:37:05 – How to update the state variables in Class component
-`Part - 3 Completed`
+- 00:37:05 – How to update the state variables in Class component
+  `Part - 3 Completed`
 
 ### Part - 4
 
-00:47:55 – Interview Question
-00:48:20 – Life cycle of Class based components
-00:50:00 – Detailed Explanation
-– Parent, child – Constructor
-– Parent, child – Render
-00:58:25 – ComponentDidMount(){ }, Life cycle of a Parent-child relationship
-01:05:00 –ComponentDidMount() used for API calss
-01:07:00 – API calls inside useEffect()
-`Part - 4 Completed`
-01:14:00 – this.props.name + “child constructor”
-01:20:00 – React Lifecycle Methods Diagram
-01:21:00 – Why React is so fast?
-01:27:00 – DOM Manipulation
-01:29:00 – Render phase, Commit phase
+- 00:47:55 – Interview Question
+- 00:48:20 – Life cycle of Class based components
+- 00:50:00 – Detailed Explanation
+- Parent, child – Constructor
+- Parent, child – Render
+- 00:58:25 – ComponentDidMount(){ }, Life cycle of a Parent-child relationship
+- 01:05:00 –ComponentDidMount() used for API calss
+- 01:07:00 – API calls inside useEffect()
+  `Part - 4 Completed`
+
+### Part - 5
+
+- 01:10:00 - What happent if we call mutiple child classComponent.
+- 01:14:00 – this.props.name + “child constructor”
+- 01:20:00 – React Lifecycle Methods Diagram
+- 01:21:00 – Why React is so fast?
+- 01:27:00 – DOM Manipulation
+- 01:29:00 – Render phase, Commit phase
+  `Part - 5 Completed`
+
+### Part - 6
+
 01:33:00 – How to make API calls in class based components?
 01:36:00 – GitHub API call
 01:38:40 – How to update the json data into our web page
@@ -200,6 +208,9 @@
 01:52:00 – Mounting Cycle
 01:55:00 – API rate limit exceeded
 01:56:15 – Unmounting Phase/cycle
+
+### Part - 7
+
 01:58:00 - in older days we were coding like this
 02:09:00 – How to write the same in class based component – ProfileClass.js
 02:15:00 – More Deeper we explore the old way of writing React Code

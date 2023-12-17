@@ -208,6 +208,7 @@
 01:52:00 – Mounting Cycle
 01:55:00 – API rate limit exceeded
 01:56:15 – Unmounting Phase/cycle
+`Part - 6 Completed`
 
 ### Part - 7
 

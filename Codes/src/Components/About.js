@@ -26,8 +26,6 @@ class About extends Component {
         {/* Calling child class component with props */}
         {/* Calling multple chaild class, calling classComponent means makign the instance of the class */}
         <UserClass name={"Fisrt"} Location={"Mohali"} />
-        <UserClass name={"Second"} Location={"Varanasi"} />
-        <UserClass name={"Third"} Location={"Lucknow"} />
       </div>
     );
   }

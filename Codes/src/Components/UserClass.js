@@ -5,48 +5,37 @@ class UserClass extends React.Component {
   constructor(props) {
     super(props);
 
-    // In Class Component, declaring the local variable with this.state object. Here state is a reserve word.
-    // In classComponet we do not create seprate variable for each local state like function component
-    this.state = {
-      userInfo: {
-        name: "Dummy_Name",
-        following: "Dummy_following",
-      },
-    };
-
     console.log(this.props.name + "Child Class Constructer");
   }
 
   // For calling live API we use `async` key word before the compomemtDidMount.
-  async componentDidMount() {
-    // console.log(this.props.name + "Child Class didMount");
-
-    const jsonData = await fetch("https://api.github.com/users/Abhi9125");
-    const data = await jsonData.json();
-
-    this.setState({
-      userInfo: data,
-    });
-    console.log(data);
+  componentDidMount() {
+    // this interval will run after leaving this page so that reasion we use Unmounting.
+    this.timer = setInterval(() => {
+      console.log("Massing the things");
+    }, 1000);
+    console.log(this.props.name + "Child Class didMount");
   }
 
   componentDidUpdate() {
     console.log("Execute didUpdate");
   }
 
+  // we use willUnmout bcz we want clean things before leaving the page.
   componentWillUnmount() {
+    // After clear the Interval, if we go i page to diffrent page DidMount will Stop.
+    clearInterval(this.timer);
     console.log("WillUnmount is execute");
   }
 
   render() {
-    const { name, following } = this.state.userInfo;
+    const { name, location } = this.props;
     console.log(this.props.name + "Child Class Render()");
-
     debugger;
     return (
       <div className="detail-card">
-        <h3>{name}</h3>
-        <h3>Number of following {following}</h3>
+        <h3>Name : Abhishek Singh</h3>
+        <h3>Location : Mohali</h3>
         <h3>Contact : abhi.singh3231@gmail.com</h3>
       </div>
     );

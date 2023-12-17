@@ -213,11 +213,12 @@
 ### Part - 7
 
 01:58:00 - in older days we were coding like this
-02:09:00 – How to write the same in class based component – ProfileClass.js
+02:09:00 – How to write the same in class based component – ProfileClass.js, and why use componentDidUpdate.
 02:15:00 – More Deeper we explore the old way of writing React Code
 02:18:00 – what is the use case of componentWillUnmount()?
 02:24:30 – Problem of Single Page Application
 02:30:00 – Senior Developer should know this
 02:32:00 – What will happen if we create setInterval inside useEffect
 02:36:30 – coding Profile.js
-02:45:30 – Async in useEffect()
+02:45:30 – Unmounting in useEffect() by reting a function
+`Part - 7 Completed`

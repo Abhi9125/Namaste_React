@@ -1,26 +1,13 @@
-import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
-
-// The useParams hook is a React hook that allows you to access the dynamic parameters present in the current URL. These parameters are typically defined in the route path using placeholders like :id.
+import useRestaurantMenuAPIFetch from "../utility/useRestaurantMenuAPIFetch";
 import { useParams } from "react-router-dom";
 
-import { Menu_API } from "../utility/constant";
-
 const RestaurantsMenu = () => {
-  const [resItems, setResItems] = useState("");
-  useEffect(() => {
-    fetchResMenuData();
-  }, []);
-
   // useParam() hook return id of restaurants
-  const id = useParams();
+  const { resId } = useParams();
 
-  const fetchResMenuData = async () => {
-    const data = await fetch(Menu_API + id.resId);
-    const JsonData = await data.json();
-    console.log(JsonData.data.cards);
-    setResItems(JsonData);
-  };
+  // Now we custom hook for fetch the data.
+  const resItems = useRestaurantMenuAPIFetch(resId);
 
   if (resItems === "") return <Shimmer />;
 
@@ -34,9 +21,8 @@ const RestaurantsMenu = () => {
     resItems.data.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
       ?.card;
 
-  //   recommended restaurant
-  //   const recRes = resItems.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards;
-  //   console.log(recRes);
+  // recommended restaurant
+  const recRes = resItems.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards;
   return (
     <div className="menu-container">
       <div className="resName-container">
@@ -52,10 +38,6 @@ const RestaurantsMenu = () => {
               <h3>{item.card.info.name + ":" + item.card.info.price / 100}</h3>
             </li>
           ))}
-          {/* {console.log(
-            resItems.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[2]
-              .card.card.itemCards
-          )} */}
         </ul>
       </div>
     </div>

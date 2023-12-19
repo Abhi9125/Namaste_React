@@ -3,6 +3,8 @@ import RescartCom from "./RescartCom";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import { Restaurants_API } from "../utility/constant";
+import useStatus from "../utility/useStatus";
 
 // Body Component that hold search and reasturent cart.
 const BodyCom = () => {
@@ -12,6 +14,8 @@ const BodyCom = () => {
   const [searchText, setSearchText] = useState("");
   // Without add this seachres hm after one search kewal output wale cards me hi search kr skte the.
   const [searchRes, setSearchRes] = useState([]);
+  // importing the custom hoo useStatus that return the status of net.
+  const currNetStatus = useStatus();
 
   // Whenever state variable is change react reconciliation(re-render it).
   console.log("Rendered Every Change");
@@ -24,9 +28,7 @@ const BodyCom = () => {
 
   // fetch api
   const fetchData = async () => {
-    const res = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.7498676&lng=76.64110939999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const res = await fetch(Restaurants_API);
     const Jsondata = await res.json();
     console.log(Jsondata);
     console.log(
@@ -44,6 +46,10 @@ const BodyCom = () => {
         ?.restaurants
     );
   };
+
+  // Checking the net status.
+  if (currNetStatus === false)
+    return <h2>Opps!! Pls check the internet connection</h2>;
   // Instead of using if condition we can use ternary oprator.
   return ListOFResturant.length === 0 ? (
     <Shimmer />

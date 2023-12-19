@@ -2,11 +2,12 @@ import { IMG_URL } from "../utility/constant";
 import { useState } from "react";
 //Link component for link
 import { Link } from "react-router-dom";
-
+import useStatus from "../utility/useStatus";
 const HeaderCom = () => {
   // This is the special variable that is Statevariable.
   const [btnNameReact, setBtnNameReact] = useState("Login");
 
+  const netStatus = useStatus();
   return (
     <header className="header">
       <div className="img-container">
@@ -15,6 +16,7 @@ const HeaderCom = () => {
 
       <div className="nav-container">
         <ul>
+          <li>Online_Status : {netStatus === true ? "✅" : "❌"}</li>
           <li>
             <Link to="/">Home</Link>
           </li>

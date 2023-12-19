@@ -261,4 +261,4 @@
   01:33:00 – how to optimize the code (Till this discussed)
   01:35:00 – Implementing Lazy Loading to other web pages
   01:36:00 – Interview Tips
-  `Part - 5 Completed `
+  `Part - 5Completed`

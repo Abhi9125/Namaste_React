@@ -10,6 +10,15 @@ import HeaderCom from "./Components/HeaderCom";
 // importing router configration, RouterProvider for rendering.
 // Use import Outlet component for children routing.
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+// import Grocery from "./Components/Grocery";
+
+/**
+ * lazy is a way to make your React app faster by loading components only
+ * when they're needed, and Suspense helps you handle the loading process more gracefully.
+ */
+import { lazy, Suspense } from "react";
+
+const Grocery = lazy(() => import("./Components/Grocery"));
 // App component
 const AppContainer = () => {
   return (
@@ -40,6 +49,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/grocery",
+        element: (
+          <Suspense fallback={<h1> Loading....</h1>}>
+            <Grocery />
+          </Suspense>
+        ),
       },
       {
         // we give `:`(Collon) for dynamic routing.

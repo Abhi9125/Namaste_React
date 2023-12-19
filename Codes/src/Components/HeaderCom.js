@@ -33,6 +33,9 @@ const HeaderCom = () => {
           <li>
             <Link to="/card">Card</Link>
           </li>
+          <li>
+            <Link to="/grocery">Grocery</Link>
+          </li>
           <button
             className="login-btn"
             onClick={() => {

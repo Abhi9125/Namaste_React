@@ -9,35 +9,37 @@ const HeaderCom = () => {
 
   const netStatus = useStatus();
   return (
-    <header className="header">
-      <div className="img-container">
-        <img className="image" src={IMG_URL} />
+    <header className="flex justify-between items-center bg-white shadow-md m-[2px]">
+      <div className="p-2 w-20 rounded-md">
+        <img src={IMG_URL} />
       </div>
 
-      <div className="nav-container">
-        <ul>
-          <li>Online_Status : {netStatus === true ? "✅" : "❌"}</li>
-          <li>
+      <div>
+        <ul className="flex justify-between items-center text-lg ">
+          <li className="mr-6 transition-colors duration-100 hover:text-orange-500">
+            Online_Status : {netStatus === true ? "✅" : "❌"}
+          </li>
+          <li className="mr-6 transition-colors duration-100 hover:text-orange-500">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="mr-6 transition-colors duration-100 hover:text-orange-500">
             {/* we do not use anchor tag bcz if we use anchor tag if referce hole app 
             Instead of using anchor we use Link component.
             */}
             {/* <a href="/about">About</a> */}
             <Link to="/about">About</Link>
           </li>
-          <li>
+          <li className="mr-6 transition-colors duration-100 hover:text-orange-500">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li>
+          <li className="mr-6 transition-colors duration-100 hover:text-orange-500">
             <Link to="/card">Card</Link>
           </li>
-          <li>
+          <li className="mr-6 transition-colors duration-100 hover:text-orange-500">
             <Link to="/grocery">Grocery</Link>
           </li>
           <button
-            className="login-btn"
+            className="mr-6 bg-red-500 text-white px-4 py-2 rounded-md"
             onClick={() => {
               btnNameReact === "Login"
                 ? setBtnNameReact("Logout")

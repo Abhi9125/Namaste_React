@@ -54,12 +54,12 @@ const BodyCom = () => {
   return ListOFResturant.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="main-body-container">
-      <div className="btn-container">
+    <div>
+      <div>
         {/* Search box creating */}
         <input
           type="text"
-          className="search-box"
+          className="p-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
           placeholder="Search Resturent"
           value={searchText}
           // call setSearchText() on each change and it rerender component every change.
@@ -67,7 +67,7 @@ const BodyCom = () => {
         />
         {/* Serach a perticular resturent by its name */}
         <button
-          className="search-btn"
+          className="mx-2 bg-red-500 text-white px-4 py-2 rounded-md"
           onClick={() => {
             // search resturent from all resturent.
             const searchRes = ListOFResturant.filter(
@@ -82,11 +82,11 @@ const BodyCom = () => {
           Search
         </button>
         <button
-          className="filter-btn"
+          className="mx-2 bg-red-500 text-white px-4 py-2 rounded-md"
           // Add onClick for filter --> filter out over 4 rating resturent but UI will not change.
           onClick={() => {
             const filteredList = ListOFResturant.filter(
-              (res) => res.info.avgRating > 4.0
+              (res) => res.info.avgRating > 4.2
             );
             console.log(filteredList);
             // Fix the problem.
@@ -97,7 +97,7 @@ const BodyCom = () => {
           Top Rated Resturant
         </button>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap justify-evenly">
         {
           // update ListOFResturent with searchRes bcz hame kewal search text wale resturent hi chahiye.
           searchRes.map((resturent) => (

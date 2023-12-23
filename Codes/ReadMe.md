@@ -262,3 +262,61 @@
   01:35:00 – Implementing Lazy Loading to other web pages
   01:36:00 – Interview Tips
   `Part - 5Completed`
+
+### Episode 10 – Jo Diktha hai, Voh biktha hai
+
+- 02:22 – Default way of writing CSS
+- 03:00 – SCSS and SaSS
+- 04:40 – New way of writing CSS in a React application (Styled Components)
+- 06:30 – another way is using libraries & frameworks (Material UI, BootStrap, Chakra UI)
+- 10:30 – Ant Design
+- 11:30 – Tailwind CSS
+- 13:55 – Tailwind CSS website
+- 16:15 – Installation- Parcel – PostCSS
+- 18:40 – tailwind.congig.js
+- 19:35 - configure PostCSS
+- 23:00 – coding postCSSrc
+- 26:00 – Delete all CSS files & insert only 3 new lines (Tailwind)
+- 29:00 – In Tailwind CSS, usage of ‘className’
+- 38:25 – Tailwind Visual Studio Code extension – Tailwind Intellisense
+- 43:07 to 01:08:30 - Coding Tailwind CSS examples
+- 01:10:30 – Pros & cons of Tailwind CSS discussed
+
+## Episode 11 : Data is the new Oil 🚀
+
+### part - 1
+
+- 00:50 – Higher Order Components
+- 06:50 – Logic to implement “Promoted” label
+- 18:25 – Explained: Higher Order Functions – Pure Functions
+  `part - 1 completed`
+
+- 20:00 – Add Tailwind CSS to make “Promoted’ label to look cool
+- 21:43 – Recap of Higher Order Components
+- 23:06 – Controlled & uncontrolled component
+- 23:14 – Lifting the state up
+- 23:30 – Importance of React applications discussed (UI Layer & Data Layer)
+- 25:50- Difference between a junior engineer & a senior
+- 32:05 – The correct data to be rendered on the page.
+- 33:00 – Usage of filter() function
+- 37:10 to 42:00 – Building Accordion and making it look cooler using Tailwind CSS
+- 43:00 to 55:00 – Creating a RestaurantCategory.js component & making it beautiful by using Tailwind
+- 55:10 to 01:10:30 – ItemList.js component & Accordion dropdown coding
+- 01:12:00 – Bug found in Swiggy API
+- 01:21:00 to 01:25:00 – Creating a new “+” button and configuring it
+- 01:26:03 – Make a drop down menu clickable
+- 01:32:15 – Building a toggle button in the accordion
+- 01:36:10 – React Dev Tools – Chrome Extension
+- 01:40:15 – Profiling
+- 01:42:50 – Exploring ‘Components’ tab in inspect element window
+- 01:47:00 – Parent & child components – lifting the state up
+- 01:51:00 – Controlled & Uncontrolled Component
+- 02:05:20 – Lifting the State up
+- 02:08:50 – Props Drilling
+- 02:16:00 – React Context
+- 02:21:30 – UserContext
+- 02:24:00 – React Hook – useContext
+- 02:30:00 – In class based component, we don’t have Hooks, we can’t use useContext
+- 02:49:00 – input box – username
+- 02:59:49 – Recap of context
+- 03:04:00 – An interview question

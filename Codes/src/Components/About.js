@@ -1,6 +1,4 @@
 import User from "./User";
-import UserClass from "./UserClass";
-// import React from "react";
 // we also destructure the Component onfly.
 import { Component } from "react";
 

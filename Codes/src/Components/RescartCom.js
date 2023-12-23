@@ -35,4 +35,25 @@ const RescartCom = (props) => {
   );
 };
 
+// HOC--> Higher order Component --  Is a function atha t take a component and do some modification and return a component
+
+export const Offers = (RescartCom) => {
+  // After rendering OfferOnRes the resdata come to in props bcz this is the component.
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute ml-4 mt-4  bg-gray-200 translate-x-4 text-black">
+          {props?.resData?.info?.aggregatedDiscountInfoV3.header +
+            " " +
+            props?.resData?.info?.aggregatedDiscountInfoV3.subHeader}
+        </label>
+        {console.log(props)}
+        {/* we use {...props} bcz inside the props only resdata as a property 
+        without using this or sperade oprator each time when ResCom render go to new object */}
+        <RescartCom {...props} />
+      </div>
+    );
+  };
+};
+
 export default RescartCom;

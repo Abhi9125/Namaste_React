@@ -1,5 +1,4 @@
-import RescartCom from "./RescartCom";
-// Importing useState/useEffect from react by named_import.
+import RescartCom, { Offers } from "./RescartCom";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -8,14 +7,17 @@ import useStatus from "../utility/useStatus";
 
 // Body Component that hold search and reasturent cart.
 const BodyCom = () => {
-  // useState() calling.
-  // we do not need of dummy data.
   const [ListOFResturant, setListOFResturant] = useState([]);
   const [searchText, setSearchText] = useState("");
-  // Without add this seachres hm after one search kewal output wale cards me hi search kr skte the.
+
+  // Without add this search hm after one search kewal output wale cards me hi search kr skte the.
   const [searchRes, setSearchRes] = useState([]);
-  // importing the custom hoo useStatus that return the status of net.
+
+  // Importing the custom hook that return current net status
   const currNetStatus = useStatus();
+
+  // CALLING THE HOC THAT RETURN TOP REATED RESTAURANT
+  const OffersOnRes = Offers(RescartCom);
 
   // Whenever state variable is change react reconciliation(re-render it).
   console.log("Rendered Every Change");
@@ -100,13 +102,25 @@ const BodyCom = () => {
       <div className="flex flex-wrap justify-evenly">
         {
           // update ListOFResturent with searchRes bcz hame kewal search text wale resturent hi chahiye.
-          searchRes.map((resturent) => (
+          searchRes?.map((resturent) => (
             <Link
               key={resturent.info.id}
               to={"/restaurants/" + resturent.info.id}
               style={{ color: "black", textDecoration: "none" }}
             >
-              <RescartCom resData={resturent} />
+              {/* If restaurant have any offer then offersOnRes(HOC) Execute other wise RescartCom Executed*/}
+              {resturent?.info?.aggregatedDiscountInfoV3 ? (
+                <OffersOnRes resData={resturent} />
+              ) : (
+                <RescartCom key="resturent.info.id" resData={resturent} />
+              )}
+              {/* {resturent?.info?.avgRating > 4.2 ? (
+                <TopRatedRes resData={resturent} />
+              ) : (
+                <RescartCom key="resturent.info.id" resData={resturent} />
+              )} */}
+
+              {/* <RescartCom resData={resturent} /> */}
             </Link>
           ))
         }

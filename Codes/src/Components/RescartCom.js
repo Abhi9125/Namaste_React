@@ -42,14 +42,14 @@ export const Offers = (RescartCom) => {
   return (props) => {
     return (
       <div>
-        <label className="absolute ml-4 mt-4  bg-gray-200 translate-x-4 text-black">
+        <label className="absolute ml-4 mt-4 bg-black font-semibold text-white">
           {props?.resData?.info?.aggregatedDiscountInfoV3.header +
             " " +
             props?.resData?.info?.aggregatedDiscountInfoV3.subHeader}
         </label>
         {console.log(props)}
         {/* we use {...props} bcz inside the props only resdata as a property 
-        without using this or sperade oprator each time when ResCom render go to new object */}
+        without using this or sperade oprator each time when RecartsCom render go to new object */}
         <RescartCom {...props} />
       </div>
     );

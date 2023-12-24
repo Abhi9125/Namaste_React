@@ -291,6 +291,8 @@
 - 18:25 – Explained: Higher Order Functions – Pure Functions
   `part - 1 completed`
 
+### Part - 2
+
 - 20:00 – Add Tailwind CSS to make “Promoted’ label to look cool
 - 21:43 – Recap of Higher Order Components
 - 23:06 – Controlled & uncontrolled component
@@ -306,6 +308,7 @@
 - 01:21:00 to 01:25:00 – Creating a new “+” button and configuring it
 - 01:26:03 – Make a drop down menu clickable
 - 01:32:15 – Building a toggle button in the accordion
+  `Part - 2 Completed`
 - 01:36:10 – React Dev Tools – Chrome Extension
 - 01:40:15 – Profiling
 - 01:42:50 – Exploring ‘Components’ tab in inspect element window

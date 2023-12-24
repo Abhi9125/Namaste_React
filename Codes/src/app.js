@@ -22,7 +22,7 @@ const Grocery = lazy(() => import("./Components/Grocery"));
 // App component
 const AppContainer = () => {
   return (
-    <div className="font-sans bg-gray-100 min-h-screen">
+    <div className="font-sans text-sm bg-gray-100 min-h-screen">
       <HeaderCom />
       {/* I want when path is "/about" below <About/> render ho. agr "/contact" to below <Contact/ component render ho same for other header Component> */}
       {/* So for above functionality we use Outlet component and Children routing. */}

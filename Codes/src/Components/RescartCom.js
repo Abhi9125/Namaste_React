@@ -47,7 +47,6 @@ export const Offers = (RescartCom) => {
             " " +
             props?.resData?.info?.aggregatedDiscountInfoV3.subHeader}
         </label>
-        {console.log(props)}
         {/* we use {...props} bcz inside the props only resdata as a property 
         without using this or sperade oprator each time when RecartsCom render go to new object */}
         <RescartCom {...props} />

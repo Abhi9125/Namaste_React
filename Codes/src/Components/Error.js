@@ -6,8 +6,8 @@ const Error = () => {
   const errorObj = useRouteError();
   console.log(errorObj);
   return (
-    <div>
-      <h1>Oppssss!!!!!!</h1>
+    <div className="m-4">
+      <h1 className="font-bold">Oppssss!!!!!!</h1>
       <br />
       <h2>{errorObj.status + " " + errorObj.statusText}</h2>
     </div>

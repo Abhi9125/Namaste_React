@@ -15,15 +15,12 @@ const RestaurantCategory = ({ data }) => {
   return (
     <div>
       {/* Accordian Items Header */}
-      <div
-        className="text-md  mx-1 my-2 bg-gray-200 shadow-md rounded-md"
-        onClick={toggleAccordian}
-      >
+      <div className="text-md  mx-1 my-2 bg-gray-200 shadow-md rounded-md">
         <div className="flex justify-between">
           <span className="font-bold px-1 py-2">
             {data.title} ({data.itemCards.length})
           </span>
-          <span className="px-1 py-2">
+          <span className="px-1 py-2" onClick={toggleAccordian}>
             <FontAwesomeIcon icon={faAnglesDown} />
           </span>
         </div>

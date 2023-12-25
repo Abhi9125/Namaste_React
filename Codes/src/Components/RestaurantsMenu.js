@@ -4,9 +4,13 @@ import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import RestaurantCategory from "./RestaurantCategory";
+import { useState } from "react";
 const RestaurantsMenu = () => {
   // useParam() hook return id of restaurants
   const { resId } = useParams();
+
+  // Make state varibale to hold the state of the index which intex show.
+  const [showIndex, setShowIndex] = useState(0);
 
   // Now we custom hook for fetch the data.
   const resItems = useRestaurantMenuAPIFetch(resId);
@@ -55,10 +59,13 @@ const RestaurantsMenu = () => {
       </div>
 
       {/*  Building the Accordian for different category */}
-      {itemCategory.map((differentCategory) => (
+      {/* RestaurantCategory componnet is controlled component bcz it conntrolled by its parent RestaurantMenu */}
+      {itemCategory.map((differentCategory, index) => (
         <RestaurantCategory
           key={differentCategory.card.card.title}
           data={differentCategory?.card?.card}
+          showAccordion={index === showIndex ? true : false}
+          setShowIndex={() => setShowIndex(index)}
         />
       ))}
     </div>

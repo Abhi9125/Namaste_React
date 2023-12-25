@@ -14,7 +14,6 @@ const ItemList = ({ itemsMenu }) => {
                   {item?.card?.info?.name}
                 </span>
                 <span className="pl-2 font-semibold">
-                  -
                   {item?.card?.info?.price
                     ? item?.card?.info?.price / 100
                     : item?.card?.info?.defaultPrice / 100}

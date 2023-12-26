@@ -31,7 +31,7 @@ class UserClass extends React.Component {
   render() {
     const { name, location } = this.props;
     console.log(this.props.name + "Child Class Render()");
-    debugger;
+    // debugger;
     return (
       <div className="detail-card">
         <h3>Name : Abhishek Singh</h3>

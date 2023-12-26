@@ -3,9 +3,16 @@ import { useState } from "react";
 //Link component for link
 import { Link } from "react-router-dom";
 import useStatus from "../utility/useStatus";
+import { useContext } from "react";
+import UserContext from "../utility/UserContext";
 const HeaderCom = () => {
   // This is the special variable that is Statevariable.
   const [btnNameReact, setBtnNameReact] = useState("Login");
+
+  /*** User context return an object we can also do onfly destructing.
+   * const {loggedInUser = useContext(UserContext)}
+   */
+  const contextData = useContext(UserContext);
 
   const netStatus = useStatus();
   return (
@@ -49,6 +56,8 @@ const HeaderCom = () => {
           >
             {btnNameReact}
           </button>
+          {/* Read the value of UserContext */}
+          <li>UserName:{contextData.loggedInUser}</li>
         </ul>
       </div>
     </header>

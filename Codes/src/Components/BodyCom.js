@@ -1,10 +1,10 @@
 import RescartCom, { Offers } from "./RescartCom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { Restaurants_API } from "../utility/constant";
 import useStatus from "../utility/useStatus";
-
+import UserContext from "../utility/UserContext";
 // Body Component that hold search and reasturent cart.
 const BodyCom = () => {
   const [ListOFResturant, setListOFResturant] = useState([]);
@@ -21,6 +21,8 @@ const BodyCom = () => {
 
   // Whenever state variable is change react reconciliation(re-render it).
   console.log("Rendered Every Change");
+
+  const { loggedInUser, setUserName } = useContext(UserContext);
 
   // We use useEffect here bcz we want api calling after first render.
   useEffect(() => {
@@ -98,6 +100,11 @@ const BodyCom = () => {
         >
           Top Rated Resturant
         </button>
+        <input
+          className="border border-black"
+          value={loggedInUser}
+          onChange={(e) => setUserName(e.target.value)}
+        />
       </div>
       <div className="flex flex-wrap justify-evenly">
         {

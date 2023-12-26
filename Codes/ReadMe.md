@@ -309,6 +309,9 @@
 - 01:26:03 – Make a drop down menu clickable
 - 01:32:15 – Building a toggle button in the accordion
   `Part - 2 Completed`
+
+  ### Part - 3
+
 - 01:36:10 – React Dev Tools – Chrome Extension
 - 01:40:15 – Profiling
 - 01:42:50 – Exploring ‘Components’ tab in inspect element window
@@ -323,3 +326,4 @@
 - 02:49:00 – input box – username
 - 02:59:49 – Recap of context
 - 03:04:00 – An interview question
+  `Part - 3 Completed`

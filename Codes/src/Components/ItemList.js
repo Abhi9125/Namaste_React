@@ -3,6 +3,7 @@ import { CDN_URL } from "../utility/constant";
 // This component use for show all items in each category.
 const ItemList = ({ itemsMenu }) => {
   console.log(itemsMenu);
+
   return (
     <div>
       {itemsMenu.map((item) => {

@@ -1,8 +1,18 @@
 import { CDN_URL } from "../utility/constant";
+// Import the useDispatch to write(Update) the store.
+import { useDispatch } from "react-redux";
+import { addItem } from "../utility/cartSlice";
 
 // This component use for show all items in each category.
 const ItemList = ({ itemsMenu }) => {
   console.log(itemsMenu);
+
+  // Calling dispatch
+  const dispatch = useDispatch();
+  const handleAddItems = () => {
+    // Dispatch the action and update the slice
+    dispatch(addItem("pizza"));
+  };
 
   return (
     <div>
@@ -24,7 +34,10 @@ const ItemList = ({ itemsMenu }) => {
               <p className="text-xs">{item?.card?.info?.description}</p>
             </div>
             <div className="w-2/12 m-1 border-b-2  border-gray-300">
-              <button className="absolute bg-black text-white rounded-md ml-1 ">
+              <button
+                className="absolute bg-black text-white rounded-md ml-1 "
+                onClick={handleAddItems}
+              >
                 Add+
               </button>
               <img

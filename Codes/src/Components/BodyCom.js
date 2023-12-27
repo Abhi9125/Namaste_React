@@ -36,17 +36,17 @@ const BodyCom = () => {
     const Jsondata = await res.json();
     console.log(Jsondata);
     console.log(
-      Jsondata?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+      Jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
     //Update the Resturants that come from API.
     setListOFResturant(
-      Jsondata?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+      Jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
     // setResturent card that come from API.
     setSearchRes(
-      Jsondata?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+      Jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
   };

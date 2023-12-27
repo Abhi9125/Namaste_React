@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 import useStatus from "../utility/useStatus";
 import { useContext } from "react";
 import UserContext from "../utility/UserContext";
+// import the useSelector to read the items from cart store
+import { useSelector } from "react-redux";
+
 const HeaderCom = () => {
   // This is the special variable that is Statevariable.
   const [btnNameReact, setBtnNameReact] = useState("Login");
@@ -13,6 +16,10 @@ const HeaderCom = () => {
    * const {loggedInUser = useContext(UserContext)}
    */
   const contextData = useContext(UserContext);
+
+  // By using Selector Hook we suscribing(read) to the store
+  const cartItems = useSelector((store) => store.card.items);
+  console.log(cartItems); // Add Only pizza in store.
 
   const netStatus = useStatus();
   return (
@@ -39,8 +46,8 @@ const HeaderCom = () => {
           <li className="mr-6 transition-colors duration-100 hover:text-orange-500">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li className="mr-6 transition-colors duration-100 hover:text-orange-500">
-            <Link to="/card">Card</Link>
+          <li className="font-bold mr-6 transition-colors duration-100 hover:text-orange-500">
+            Card - ({cartItems.length} Items)
           </li>
           <li className="mr-6 transition-colors duration-100 hover:text-orange-500">
             <Link to="/grocery">Grocery</Link>

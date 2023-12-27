@@ -7,17 +7,12 @@ import Contact from "./Components/Contact";
 import Error from "./Components/Error";
 import RestaurantsMenu from "./Components/RestaurantsMenu";
 import HeaderCom from "./Components/HeaderCom";
-// importing router configration, RouterProvider for rendering.
-// Use import Outlet component for children routing.
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-// import Grocery from "./Components/Grocery";
-/**
- * lazy is a way to make your React app faster by loading components only
- * when they're needed, and Suspense helps you handle the loading process more gracefully.
- */
 import { lazy, Suspense } from "react";
 import UserContext from "./utility/UserContext";
-
+// import Provider for config the store to app
+import { Provider } from "react-redux";
+import appStore from "./utility/appStore";
 const Grocery = lazy(() => import("./Components/Grocery"));
 // App component
 const AppContainer = () => {
@@ -33,18 +28,20 @@ const AppContainer = () => {
   }, []);
 
   return (
-    /*** 1. <UserContext.Provider value={{ loggedInUser: userName }}> use for update the UserContext data globaly
-     * 2. If i wrapped the only HeaderCom with  <UserContext.Provider value={{ loggedInUser: userName }}> so only HeaderCom updated
-     *
+    /**
+     * <Provider> use to provide store to our app, if we want to provide the Provider in a
+     * perticular section so we wrapped only that section.
      */
-    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-      <div className="font-sans text-sm bg-gray-100 min-h-screen">
-        <HeaderCom />
-        {/* I want when path is "/about" below <About/> render ho. agr "/contact" to below <Contact/ component render ho same for other header Component> */}
-        {/* So for above functionality we use Outlet component and Children routing. */}
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <div className="font-sans text-sm bg-gray-100 min-h-screen">
+          <HeaderCom />
+          {/* I want when path is "/about" below <About/> render ho. agr "/contact" to below <Contact/ component render ho same for other header Component> */}
+          {/* So for above functionality we use Outlet component and Children routing. */}
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 

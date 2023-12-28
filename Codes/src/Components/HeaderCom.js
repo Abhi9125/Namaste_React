@@ -17,8 +17,8 @@ const HeaderCom = () => {
    */
   const contextData = useContext(UserContext);
 
-  // By using Selector Hook we suscribing(read) to the store
-  const cartItems = useSelector((store) => store.card.items);
+  // By using Selector Hook that take which porsion of appstore we want suscribing(read) from store.
+  const cartItems = useSelector((store) => store.cart.items);
   console.log(cartItems); // Add Only pizza in store.
 
   const netStatus = useStatus();
@@ -47,7 +47,7 @@ const HeaderCom = () => {
             <Link to="/contact">Contact Us</Link>
           </li>
           <li className="font-bold mr-6 transition-colors duration-100 hover:text-orange-500">
-            Card - ({cartItems.length} Items)
+            <Link to="/cart">Cart - ({cartItems.length} Items)</Link>
           </li>
           <li className="mr-6 transition-colors duration-100 hover:text-orange-500">
             <Link to="/grocery">Grocery</Link>

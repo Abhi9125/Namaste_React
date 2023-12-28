@@ -13,6 +13,7 @@ import UserContext from "./utility/UserContext";
 // import Provider for config the store to app
 import { Provider } from "react-redux";
 import appStore from "./utility/appStore";
+import Cart from "./Components/Cart";
 const Grocery = lazy(() => import("./Components/Grocery"));
 // App component
 const AppContainer = () => {
@@ -76,6 +77,10 @@ const appRouter = createBrowserRouter([
         // we give `:`(Collon) for dynamic routing.
         path: "/restaurants/:resId",
         element: <RestaurantsMenu />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
     // handle error if path not match ex - localhost:1479/difhdsukfh

@@ -14,25 +14,39 @@ const cartSlice = createSlice({
 
   //   reducers object that have action and reducer function
   reducers: {
-    // addItem is action that happen
+    // addItem is action that happen and fucction that define is reducer function.
     addItem: (state, action) => {
       // updating the state here
       state.items.push(action.payload);
     },
 
     removeItem: (state, action) => {
-      state.items.pop();
+      // Inisial state me items me objects ke form me item(menu) hai.
+      state.items = state.items.filter(
+        (item) => item.card.info.id != action.payload
+      );
     },
 
-    clearCard: (state, action) => {
+    clearCart: (state, action) => {
       state.items.length = 0;
     },
   },
 });
 
 /***
- *export const { addItem, removeItem, clearCard } = cartSlice.actions; we are exporting like this bcz enternaliy
+ * From slice we export two thinngs one is Actionn and second is reducer
+ *
+ * Eternnaly slice store action and reducer in the form of object likebelow
+ * cartSlice= {
+ * actions :{
+ * addItem:
+ * }
+ * reducer:{
+ * }
+ * };
+ *
+ *export const { addItem, removeItem, clearCart } = cartSlice.actions; we are exporting like this bcz enternaliy
  *
  */
-export const { addItem, removeItem, clearCard } = cartSlice.actions;
+export const { addItem, removeItem, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;

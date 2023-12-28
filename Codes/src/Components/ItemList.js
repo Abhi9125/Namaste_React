@@ -1,6 +1,7 @@
 import { CDN_URL } from "../utility/constant";
 // Import the useDispatch to write(Update) the store.
 import { useDispatch } from "react-redux";
+// Import the addItem where we store the items.
 import { addItem } from "../utility/cartSlice";
 
 // This component use for show all items in each category.
@@ -9,9 +10,11 @@ const ItemList = ({ itemsMenu }) => {
 
   // Calling dispatch
   const dispatch = useDispatch();
-  const handleAddItems = () => {
-    // Dispatch the action and update the slice
-    dispatch(addItem("pizza"));
+  const handleAddItems = (addItemInCart) => {
+    // console.log(addItemInCart);
+    // Dispatch the action and update the slice with fix item "pizza"
+    // dispatch(addItem("Pizza"));
+    dispatch(addItem(addItemInCart));
   };
 
   return (
@@ -36,7 +39,9 @@ const ItemList = ({ itemsMenu }) => {
             <div className="w-2/12 m-1 border-b-2  border-gray-300">
               <button
                 className="absolute bg-black text-white rounded-md ml-1 "
-                onClick={handleAddItems}
+                /**when we click on the add+ button it call the handleAddItem that add the item in the slick by using appStore. */
+                // we are calling the handleAddItems(item) here `item` is a object.
+                onClick={() => handleAddItems(item)}
               >
                 Add+
               </button>

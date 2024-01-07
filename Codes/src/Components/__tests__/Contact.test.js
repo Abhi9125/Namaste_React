@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import Contact from "../Contact";
+// import this for toBeInDocument
 import "@testing-library/jest-dom";
 
 /***
@@ -66,7 +67,7 @@ describe("Contactus component test cases", () => {
 
     const inputelememt = screen.getAllByRole("textbox"); // Not use input use textbox
 
-    console.log(inputelememt);
+    // console.log(inputelememt);
     expect(inputelememt.length).toBe(2);
   });
 });

@@ -375,7 +375,10 @@ At the end, Akshay shares his thoughts about Redux.
 - 25:30 – Installation of React Testing Library
 - 27:00 – Installation of Jest
 - 28:00 to 40:00 – Installing and configuring the Babel dependencies and configure the parcel
-  ` Part - 1 & 2 Completed`
+  ` Part - 1 Completed`
+
+  ### Part - 2
+
 - 41:38 - JS-DOM
 - 47:45 to 52:12 – Configure the Jest
 - 53:00 – Sample Testing of JS programs
@@ -383,6 +386,10 @@ At the end, Akshay shares his thoughts about Redux.
 - 57:00 - tests folder created
 - 59:00 – double underscore means dunder method
 - 01:02:00 – Syntax of a Test function
+  `part - 2 completed `
+
+  ### Part - 3
+
 - 01:10:10 – Testing of React components, Contact.test.js file created
   getByRole, toBeInTheDocument() ,
   JSX isn’t enabled for testing

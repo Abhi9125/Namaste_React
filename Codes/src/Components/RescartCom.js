@@ -2,7 +2,7 @@ import { CDN_URL } from "../utility/constant";
 
 // Reasturant Cart Component that hold information about the reaturent
 const RescartCom = (props) => {
-  // console.log(props); // output - object
+  console.log(props); // output - object
   // object destructuring
   const { resData } = props;
 

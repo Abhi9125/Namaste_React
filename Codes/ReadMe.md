@@ -399,16 +399,30 @@ At the end, Akshay shares his thoughts about Redux.
 - 01:38:45 – Beauty of “Jest”
 - 01:48:55 – getAllByRole(“textbox”) , getByPlaceholderText(“name”),
   expect(inputBoxes.length).toBe(2);
+  `Part - 3 Completed`
+
+### Part - 4 & 5
+
 - 01:55:15 – “describe”, test or it usage, Unit Testing
 - 02:02:31 – push coverage folder to gitignore
+  `Part -  4 & 5 Completed`
+
+### Part - 6
+
 - 02:04:06 – Building Header.test.js file
 - 02:19:40 – Testing cart items
 - 02:21:55 – “REGEX” use cases
 - 02:24:30 – how to simulate “click” button
+  `Part - 6 Completed`
+
+### Part - 7
+
 - 02:27:45 – Test cases for “Restaurant-card” component
   (How to pass props & do unit testing)
 - 02:30:25 – mock data
 - 02:40:22 – conclusion of Unit Testing
+  `Part - 7 Completed`
+
 - 02:41:15 – how to do “Integration Testing”
   Testing the feature of “Search”
 - 02:48:28 – fetch() API is not JS. Its in the browser

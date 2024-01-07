@@ -2,61 +2,71 @@ import { render, screen } from "@testing-library/react";
 import Contact from "../Contact";
 import "@testing-library/jest-dom";
 
-test("should load contact us component", () => {
-  // To render JSX in testing we install @babel/preset-react
-  render(<Contact />);
+/***
+ * We can write the test cases in seprate block with the help of describe();
+ * Syantex of describe
+ * describe("Group desrpiption", callback>)
+ *
+ * *** We can use `it` place `test` both are same.
+ */
 
-  //   screen is an object that com @testing-library/react
-  const heading = screen.getByRole("heading");
+describe("Contactus component test cases", () => {
+  it("should load contact us component", () => {
+    // To render JSX in testing we install @babel/preset-react
+    render(<Contact />);
 
-  //   Assertion
-  expect(heading).toBeInTheDocument();
-});
+    //   screen is an object that com @testing-library/react
+    const heading = screen.getByRole("heading");
 
-// Test Case - 2 Checkig whether button element is present or not
+    //   Assertion
+    expect(heading).toBeInTheDocument();
+  });
 
-test("should load button inside contact us component", () => {
-  render(<Contact />);
+  // Test Case - 2 Checkig whether button element is present or not
 
-  const button = screen.getByRole("button");
+  it("should load button inside contact us component", () => {
+    render(<Contact />);
 
-  expect(button).toBeInTheDocument();
-});
+    const button = screen.getByRole("button");
 
-// Test Case -- 3 Checking whether button element with name submit is present or not
+    expect(button).toBeInTheDocument();
+  });
 
-test("should load button with name submit inside contact us component", () => {
-  render(<Contact />);
+  // Test Case -- 3 Checking whether button element with name submit is present or not
 
-  const btnName = screen.getByText("Submit"); // Case sensitive
+  it("should load button with name submit inside contact us component", () => {
+    render(<Contact />);
 
-  expect(btnName).toBeInTheDocument();
-});
+    const btnName = screen.getByText("Submit"); // Case sensitive
 
-test("should load button with name submit inside contact us component", () => {
-  render(<Contact />);
+    expect(btnName).toBeInTheDocument();
+  });
 
-  const btnName = screen.getByText(/submit/i); // This (/submit/i) line is a regular expression,
+  it("should load button with name submit inside contact us component", () => {
+    render(<Contact />);
 
-  expect(btnName).toBeInTheDocument();
-});
+    const btnName = screen.getByText(/submit/i); // This (/submit/i) line is a regular expression,
 
-// Test Case - 4 -- Checking whether input element with a specific placeholder name exists or not
+    expect(btnName).toBeInTheDocument();
+  });
 
-test("should load input text with placeholder name", () => {
-  render(<Contact />);
+  // Test Case - 4 -- Checking whether input element with a specific placeholder name exists or not
 
-  const inputByPlaceholder = screen.getByPlaceholderText("Enter Name");
+  it("should load input text with placeholder name", () => {
+    render(<Contact />);
 
-  expect(inputByPlaceholder).toBeInTheDocument();
-});
+    const inputByPlaceholder = screen.getByPlaceholderText("Enter Name");
 
-// Test Case - 5 -- Checking whether multiple input elements exist or not
-test("should load 2 input text input element inside contact us component", () => {
-  render(<Contact />);
+    expect(inputByPlaceholder).toBeInTheDocument();
+  });
 
-  const inputelememt = screen.getAllByRole("textbox"); // Not use input use textbox
+  // Test Case - 5 -- Checking whether multiple input elements exist or not
+  it("should load 2 input text input element inside contact us component", () => {
+    render(<Contact />);
 
-  console.log(inputelememt);
-  expect(inputelememt.length).toBe(2);
+    const inputelememt = screen.getAllByRole("textbox"); // Not use input use textbox
+
+    console.log(inputelememt);
+    expect(inputelememt.length).toBe(2);
+  });
 });

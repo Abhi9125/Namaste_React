@@ -15,28 +15,29 @@ const RestaurantsMenu = () => {
   // Now we custom hook for fetch the data.
   const resItems = useRestaurantMenuAPIFetch(resId);
 
+  console.log(resItems);
   if (resItems === "") return <Shimmer />;
 
   // Destructuring
   const { name, cuisines, areaName, avgRatingString, totalRatingsString } =
-    resItems?.data?.cards[0]?.card?.card?.info;
+    resItems?.data?.cards[2]?.card?.card?.info;
 
-  const { lastMileTravel } = resItems?.data?.cards[0]?.card?.card?.info?.sla;
+  const { lastMileTravel } = resItems?.data?.cards[2]?.card?.card?.info?.sla;
 
   // const { title, itemCards } =
   //   resItems.data.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-  //     ?.card;
+  // ?.card;
 
   // console.log(resItems.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards);
 
   // Filtring the different category Items like reccomended, other things
   const itemCategory =
-    resItems.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards.filter(
+    resItems.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards.filter(
       (items) =>
         items?.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
-  // console.log(itemCategory);
+  console.log(itemCategory);
 
   return (
     <div className="min-h-max w-5/12 mx-auto overflow-hidden">
@@ -61,9 +62,12 @@ const RestaurantsMenu = () => {
       {/*  Building the Accordian for different category */}
       {/* RestaurantCategory componnet is controlled component bcz it conntrolled by its parent RestaurantMenu */}
       {itemCategory.map((differentCategory, index) => (
+        /***
+         * ! For each RestaurantCategory its own key,data,showAccordion and setShowIndex*/
         <RestaurantCategory
           key={differentCategory.card.card.title}
           data={differentCategory?.card?.card}
+          // Display the accordion content if the current index matches showIndex.
           showAccordion={index === showIndex ? true : false}
           setShowIndex={() => setShowIndex(index)}
         />

@@ -13,6 +13,10 @@ const RestaurantCategory = ({ data, showAccordion, setShowIndex }) => {
       {/* Accordian Items Header */}
       <div className="text-md  mx-1 my-2 bg-gray-200 shadow-md rounded-md">
         {/* When we click the Accordian heading it will call the setShowIndex and update the index and again rerender it */}
+        {/***
+         * ! When we click on the toggleAccordian it call the setShowIndex() and setShowIndex() update the setShowIndex in RestaurantsMenu
+         * ! and RestaurantsMenu component rerender again with updaed index.
+         */}
         <div className="flex justify-between" onClick={toggleAccordian}>
           <span className="font-bold px-1 py-2">
             {data.title} ({data.itemCards.length})

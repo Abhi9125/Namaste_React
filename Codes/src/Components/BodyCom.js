@@ -16,7 +16,9 @@ const BodyCom = () => {
   // Importing the custom hook that return current net status
   const currNetStatus = useStatus();
 
-  // CALLING THE HOC THAT RETURN TOP REATED RESTAURANT
+  /** 
+   * ! CALLING THE HOC THAT RETURN TOP REATED RESTAURANT 
+   */ 
   const OffersOnRes = Offers(RescartCom);
 
   // Whenever state variable is change react reconciliation(re-render it).
@@ -36,17 +38,17 @@ const BodyCom = () => {
     const Jsondata = await res.json();
     console.log(Jsondata);
     console.log(
-      Jsondata?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+      Jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
     //Update the Resturants that come from API.
     setListOFResturant(
-      Jsondata?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+      Jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
     // setResturent card that come from API.
     setSearchRes(
-      Jsondata?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+      Jsondata?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
   };

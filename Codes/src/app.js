@@ -34,6 +34,7 @@ const AppContainer = () => {
      * perticular section so we wrapped only that section.
      */
     <Provider store={appStore}>
+      {/* Here we update our store with username and add a fuction setUserName so we can access this anywhere of our app. */}
       <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
         <div className="font-sans text-sm bg-gray-100 min-h-screen">
           <HeaderCom />

@@ -1,6 +1,6 @@
 # 🍕 React Food Ordering App with Testing (Namaste React Series)
 
-This is a complete React-based Food Ordering Application built as part of the **Namaste React** learning series by [Abhi9125](https://github.com/Abhi9125). It covers a wide range of React concepts from scratch, including Redux, Context API, Routing, Custom Hooks, Lifecycle Methods, and Testing with Jest and React Testing Library.
+This is a complete React-based Food Ordering Application built as part of the **Namaste React** learning series by Akshay Saini. It covers a wide range of React concepts from scratch, including Redux, Context API, Routing, Custom Hooks, Lifecycle Methods, and Testing with Jest and React Testing Library.
 
 ---
 
